@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package inference;
+
+service InferenceService {
+  rpc Infer (InferenceRequest) returns (InferenceResponse);
+}
+
+message InferenceRequest {
+  string text = 1;
+}
+
+message InferenceResponse {
+  string result = 1;
+}

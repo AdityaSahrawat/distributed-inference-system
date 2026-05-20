@@ -1,0 +1,44 @@
+# Node.js
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*.local
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# macOS
+.DS_Store
+
+# Misc
+*.tgz
+*.pem
+*.key
+
+# Proto / generated artifacts (optional)
+# Uncomment if you generate JS/TS from .proto files
+## *.pb.js
+## *.grpc.pb.js
