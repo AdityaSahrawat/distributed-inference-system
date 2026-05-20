@@ -11,13 +11,15 @@ const proto = grpc.loadPackageDefinition(packageDefinition).inference;
 
 const GRPC_PORT = process.env.GRPC_PORT || 50051;
 
+const workerName = process.env.WORKER_NAME || "unknown-worker";
+
 function infer(call, callback) {
   const text = call.request.text;
 
-  console.log("Received request:", text);
+  console.log(`[${workerName}] Received request:`, text);
 
   callback(null, {
-    result: `processed: ${text}`,
+    result: `${workerName} processed: ${text}`,
   });
 }
 

@@ -1,0 +1,21 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    environment:
+      PORT: 3000
+      WORKER_GRPC_URL: worker:50051
+    ports:
+      - "${API_PORT:-3000}:3000"
+    depends_on:
+      - worker
+
+  worker:
+    build:
+      context: .
+      dockerfile: worker/Dockerfile
+    environment:
+      GRPC_PORT: 50051
+    expose:
+      - "50051"
